@@ -7,11 +7,11 @@
 
 #ifndef GPIO_H
 #define	GPIO_H
-
+/* ----------------- Includes -----------------*/
 #include <pic18lf4620.h>
 #include"../DATA_TYPES.h"
 #include"../DEVICE_CONFG.h"
-
+/* ----------------- Macro Declarations -----------------*/
 #define SET_BIT(REGISTER,BIT_POSITION) (REGISTER|=(1<<BIT_POSITION))
 #define CLEAR_BIT(REGISTER,BIT_POSITION) (REGISTER &= ~(1<<BIT_POSITION))
 #define TOGGLE_BIT(REGISTER,BIT_POSITION) (REGISTER ^= (1<<BIT_POSITION))
@@ -46,10 +46,7 @@
 
 #define gpio_input 0
 #define gpio_output 1
-/*
- *functions
- */
-
+/* ----------------- Software Interfaces Declarations -----------------*/
 standard_return gpio_pin_setup(uint8 port_,uint8 pin_,uint8 direction);
 standard_return gpio_pin_write(uint8 port_,uint8 pin_,uint8 state);
 standard_return gpio_pin_toggle(uint8 port_,uint8 pin_);
@@ -58,9 +55,6 @@ standard_return gpio_port_setup(uint8 port_,uint8 direction);
 standard_return gpio_port_write(uint8 port_,uint8 state);
 standard_return gpio_port_toggle(uint8 port_);
 standard_return gpio_port_read(uint8 port_,uint8 *return_value);
-
-
-
 
 #endif	/* GPIO_H */
 
