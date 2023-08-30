@@ -1,11 +1,17 @@
+/* 
+ * File:   DATA_TYPES.h
+ * Author: abdullah rahed
+ *
+ * Created on August 19, 2023, 3:50 PM
+ */
+/* ----------------- Includes -----------------*/
 #include <pic18lf4620.h>
-
 #include"GPIO.h"
-
+/* ----------------- Data Type Declarations -----------------*/
 volatile uint8* TRIS[5]={&TRISA,&TRISB,&TRISC,&TRISD,&TRISE};
 volatile uint8* LAT[5]={&LATA,&LATB,&LATC,&LATD,&LATE};
 volatile uint8* PORT[5]={&PORTA,&PORTB,&PORTC,&PORTD,&PORTE};
-
+/* ----------------- Software Interfaces -----------------*/
 standard_return gpio_pin_setup(uint8 port_,uint8 pin_,uint8 direction)
 {
     standard_return ret= ok;
